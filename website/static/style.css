@@ -1,0 +1,6 @@
+.truncate {
+    overflow: hidden;
+    word-wrap: break-word; /* Allow text to wrap to the next line */
+    white-space: normal; /* Set white-space to normal to allow wrapping */
+    max-width: 95%; /* Adjust the max-width as needed */
+}

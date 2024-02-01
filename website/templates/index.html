@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block title%}Home{%endblock%}
+
+{%block content%}
+<h1 align="center">Notes</h1>
+<br>
+<!-- displaying notes-->
+<ul class="list-group list-group-flush" id="notes">
+    {%for note in user.notes%}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="truncate">{{note.data}}</div>
+        <button type="button" class="close text-danger" onClick="deleteNote({{note.id}})" style="background: none; border: none;">
+            <span aria-hidden="true" style="font-size: 35px;">&times;</span>
+        </button>
+    </li>    
+    {%endfor%}
+</ul>
+
+<form method="post">
+    <textarea name="note" id="note" class = 'form-control' cols="30" rows="10"></textarea>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+
+{%endblock%}
